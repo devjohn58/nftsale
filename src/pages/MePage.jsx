@@ -42,7 +42,7 @@ const MePage = () => {
             window.open('https://nft.farm/accounts/me/collection', '_blank');
             history.push("/markets")
         }else{
-            alert("You have not installed Metamask wallet!")
+            alert("You have not installed Metamask wallet! Please open in Metamask app opera!")
         }
     }
     return (
