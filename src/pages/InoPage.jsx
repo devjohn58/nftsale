@@ -5,13 +5,15 @@ import ino1 from "../assets/ino1.png"
 import ino_part3 from "../assets/ino_part3.jpg"
 import pastino1 from "../assets/pastino1.png"
 import pastino2 from "../assets/pastino2.png"
-import { Button } from 'antd/lib/radio';
-import { Typography } from 'antd';
+import { Typography, Row,Col } from 'antd';
 
+const Container = styled.div`
+    min-width: 300px;
+`
 const Div = styled.div`
-    min-width: 1260px;
     padding-bottom: 50px;
     margin-top: 125px;
+    width: 100%;
     ._button{
         width: 200px;
         margin: 43px auto;
@@ -42,13 +44,15 @@ const Div = styled.div`
     ._card{
         padding: 20px 0px;
         width: 100%;
+        display: flex;
+        justify-content: center;
         ._card_1:hover{
             box-shadow: rgba(0, 0, 0, 0.24) 0px 7px 12px;
         }
         ._card_1{
             display:flex;
             flex-direction: row;
-            width: 50%;
+            width: 60%;
             border: 1px solid #fafafa;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             border-radius: 5px;
@@ -104,11 +108,11 @@ const Div = styled.div`
 const InoPage = () => {
     const [status, setStatus] = useState(true)
     return (
-        <>
+        <Container>
             <HeaderComponent />
             <Div>
                 <center>
-                    <img src={ino1} />
+                    <img src={ino1} width="80%"/>
                 </center>
                 <div className="_button">
                         <div className={status ? '_button2 active' : '_button2'} onClick={() => setStatus(true)}>Next INO</div>
@@ -118,56 +122,54 @@ const InoPage = () => {
                 {status ?
                     (
                         <div className="_card">
-                            <center>
-                            <div className="_card_1">
-                                    <div className="_card_image">
-                                        <img src={ino_part3} width="360" height="550" />
+                            <Row className="_card_1" justify="center">
+                                <Col span={24} md={12} className="_card_image">
+                                    <img src={ino_part3} width="100%" height="100%" />
+                                </Col>
+                                <Col span={24} md={12} className="_card_body">
+                                    <h1 style={{fontWeight: '700'}}>Lime Odyssey M INO Part.3</h1>
+                                    <div className="_card_body2">
+                                        <p>Battle prep, step 3</p>
+                                        <br></br>
+                                        <p>At this INO part 3, you can get Soul stones and Pharaoh's Golden Crown. Please note that up-to 30 packages can be registered at one playing account.</p>
                                     </div>
-                                    <div className="_card_body">
-                                        <h1 style={{fontWeight: '700'}}>Lime Odyssey M INO Part.3</h1>
-                                        <div className="_card_body2">
-                                            <p>Battle prep, step 3</p>
-                                            <br></br>
-                                            <p>At this INO part 3, you can get Soul stones and Pharaoh's Golden Crown. Please note that up-to 30 packages can be registered at one playing account.</p>
-                                        </div>
-                                        <a href="https://nft.farm/ino/lime-odyssey" target="_blank">
-                                            Click here
-                                        </a>
-                                        <div className="_info_date">
-                                            <Typography.Text type="secondary" style={{fontSize: '18px'}}> Launch Time (UTC) </Typography.Text>
-                                            <br></br>
-                                            <Typography.Text style={{fontSize: '18px'}}> AUG 11, 12 ~ AUG 13, 12 </Typography.Text>
-                                        </div>
-                                        <div className="_info_date">
-                                            <Typography.Text type="secondary" style={{fontSize: '18px'}}> Total Sales Quantity </Typography.Text>
-                                            <br></br>
-                                            <Typography.Text style={{fontSize: '18px'}}> 2,000 NFT </Typography.Text>
-                                        </div>
+                                    <a href="https://nft.farm/ino/lime-odyssey" target="_blank">
+                                        Click here
+                                    </a>
+                                    <div className="_info_date">
+                                        <Typography.Text type="secondary" style={{fontSize: '18px'}}> Launch Time (UTC) </Typography.Text>
+                                        <br></br>
+                                        <Typography.Text style={{fontSize: '18px'}}> AUG 11, 12 ~ AUG 13, 12 </Typography.Text>
                                     </div>
-                                </div>
-                            </center>
+                                    <div className="_info_date">
+                                        <Typography.Text type="secondary" style={{fontSize: '18px'}}> Total Sales Quantity </Typography.Text>
+                                        <br></br>
+                                        <Typography.Text style={{fontSize: '18px'}}> 2,000 NFT </Typography.Text>
+                                    </div>
+                                </Col>
+                            </Row>
                         </div>
                     ) : 
                     (
                         <>
                             <div className="_pastHeader"></div>
-                            <div className="_pastino">
-                                <div className="_pastino1">
+                            <Row className="_pastino">
+                                <Col span={24} md={12} className="_pastino1">
                                     <a href="https://nft.farm/ino/lime-odyssey-part2" target="_blank">
                                         <img src={pastino1}  width="100%"/>
                                     </a>
-                                </div>
-                                <div className="_pastino2">
+                                </Col>
+                                <Col span={24} md={12} className="_pastino2">
                                     <a href="https://nft.farm/ino/lime-odyssey-part1" target="_blank">
                                         <img src={pastino2}  width="100%"/>
                                     </a>
-                                </div>
-                            </div>
+                                </Col>
+                            </Row>
                         </>
                     )
                 }
             </Div>
-        </>
+        </Container>
     );
 };
 
