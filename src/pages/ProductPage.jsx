@@ -38,7 +38,7 @@ const ProductPage = () => {
 	if (id === "1") {
 		data = {
 			image: "https://assets.itam.games/lime-odyssey/ino-1st-package.jpeg",
-			price: "9000",
+			price: "8000",
 			subtitle:
 				"At the INO part1, you can get Soul stones, Pharaoh's Gauntlet and Armor.",
 			tokenId: "1982",
