@@ -15,7 +15,7 @@ const DivStyled = styled.div`
 	-webkit-box-align: center;
 	align-items: center;
 	border-bottom: 1px solid rgb(234, 233, 241);
-	padding: 0px 1rem;
+	padding-left:1rem ;
 	width: 100%;
 	height: 4.4375rem;
 	box-shadow: rgba(36, 31, 89, 0.25) 0px 0px 8px 0px;
