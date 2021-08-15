@@ -7,7 +7,6 @@ import zeroaddress from '../../assets/zeroaddress.png'
 
 const DivStyled = styled.div`
 	position: fixed;
-	min-width: 1250px;
 	top: 0px;
 	left: 0px;
 	display: flex;
