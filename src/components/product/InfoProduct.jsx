@@ -39,7 +39,7 @@ const InfoProduct = (props) => {
                 {status ? '' : (
                     <>
                         <Avatar src="https://assets.itam.games/itamtoken.png"></Avatar>
-                        <Tooltip title="2000">
+                        <Tooltip title={da.price}>
 				            <Typography.Text style={{paddingLeft: '5px'}}>{da.price}</Typography.Text>
                         </Tooltip>
                     </>
