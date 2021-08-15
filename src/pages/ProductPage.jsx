@@ -13,7 +13,7 @@ const RowStyled = styled(Row)`
 	padding: 10px;
 `;
 const Div = styled.div`
-	min-width: 300px;
+	min-width: 430px;
 `;
 const DivInfo = styled.div`
 	margin: 15px 0px;

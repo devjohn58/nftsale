@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { DatabaseFilled } from '@ant-design/icons';
 
 const Div = styled.div`
-    padding: 0px 100px;
     border: 1px solid #eae9f1;
     border-radius: 8px;
     `
