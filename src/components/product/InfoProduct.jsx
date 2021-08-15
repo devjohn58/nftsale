@@ -110,19 +110,19 @@ const InfoProduct = (props) => {
             key:1, 
             Event:'1', 
             Price: true, 
-            From: "1", To: "1", Date: "an hour ago" 
+            From: "1", To: "1", Date: "2 minutes ago" 
         },
         {
             key:2, 
             Event: '2',
             Price: false,
-            From: "2", To: "2", Date: "an hour ago" 
+            From: "2", To: "2", Date: "2 minutes ago" 
         },
         {
             key:3, 
             Event:'3', 
             Price: true, 
-            From: "3", To: "3", Date: "an hour ago" 
+            From: "3", To: "3", Date: "2 minutes ago" 
         },
     ];
 
