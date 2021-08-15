@@ -7,9 +7,6 @@ const Div = styled.div`
     border: 1px solid #eae9f1;
     border-radius: 8px;
     `
-    const Div1 = styled.div`
-    padding: 0px;
-    `
     const DivInfo = styled.div`
     margin: 15px 0px;
     border: 1px solid #eae9f1;
@@ -28,6 +25,7 @@ const Div = styled.div`
 `
 const LeftProduct = (props) => {
     const {data} = props
+    const widthScreen = window.innerWidth;
     return (
         <>
             <Div>
@@ -35,7 +33,10 @@ const LeftProduct = (props) => {
                     <img src={data.image} width='200' height='100%' />
                 </center>
             </Div>
-            <DivInfo>
+            {
+                parseInt(widthScreen) > 992 ? (
+
+                    <DivInfo>
                 <div className="_title">
                     <IconInfo />
                     <Typography.Text style={{paddingLeft: '5px'}}>About Lime Odyssey M {data.title} INO Package</Typography.Text>
@@ -80,6 +81,8 @@ const LeftProduct = (props) => {
                     </Row>
                 </div>
             </DivInfo>
+        ) : ''
+    }
         </>
     );
 };
