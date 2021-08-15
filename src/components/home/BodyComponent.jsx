@@ -59,8 +59,8 @@ const RowStyled = styled(Row)`
 const BodyComponent = () => {
     const data = [
         {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/3', image: 'https://assets.itam.games/lime-odyssey/ino-3rd-package.jpeg', itam: 'ITAM', price: 4000, title: 'Lime Odyssey M 3rd INO Package'},
-        {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/2', image: 'https://assets.itam.games/lime-odyssey/ino-2nd-package.jpeg',itam: 'ITAM', price: 7000,  title: 'Lime Odyssey M 2nd INO Package'},
-        {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/1', image: 'https://assets.itam.games/lime-odyssey/ino-1st-package.jpeg',itam: 'ITAM', price: '10000',  title: 'Lime Odyssey M 1st INO Package'}
+        {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/2', image: 'https://assets.itam.games/lime-odyssey/ino-2nd-package.jpeg',itam: 'ITAM', price: 6000,  title: 'Lime Odyssey M 2nd INO Package'},
+        {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/1', image: 'https://assets.itam.games/lime-odyssey/ino-1st-package.jpeg',itam: 'ITAM', price: '8000',  title: 'Lime Odyssey M 1st INO Package'}
     ]
     const widthScreen = window.innerWidth;
 	return (
