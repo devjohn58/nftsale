@@ -41,9 +41,9 @@ const DivStyled = styled.div`
     `;
 
 const HeaderComponent = () => {
-    const {account} = useContext(AuthContext)
+    const widthScreen = window.innerWidth;
 	return (
-		<DivStyled>
+        <DivStyled>
 			<a href="/">
 				<img
 					src="https://nft.farm/logo.png"
@@ -51,40 +51,99 @@ const HeaderComponent = () => {
 					width="120rem"
 				/>
 			</a>
-            <Menu mode="horizontal" >
-                    <Menu.Item key="item1">
-                        <Link to="/markets">Market</Link>
-                    </Menu.Item>
-                    <Menu.Item key="item2">
-                        <Link to="/ino">INO</Link>
-                    </Menu.Item>
-                    <Menu.Item key="item3">
-                        <a href="https://voting.itam.games/#/" target="_blank"> Vote </a>
-                    </Menu.Item>
-                    <Menu.Item key="item4">
-                        <a href="https://v1.nft.farm/en" target="_blank"> V1 (Old) </a>
-                    </Menu.Item>
-                    <Menu.Item key="item5">
-                        <a href="https://www.notion.so/itamservices/How-to-use-ITAM-NFT-Farm-84de17c9fbb84e51bb4382dea8d93deb" target="_blank"> Help </a>
-                    </Menu.Item>
-                    <Menu.Item key="item6">
-                        <a href="https://itamservices.notion.site/itamservices/ITAM-Middleware-Guide-0904a699cd2d4b17b33ff0b1598e3767" target="_blank"> Developer </a>
-                    </Menu.Item>
-                    <Menu.Item key="item7">
-                            {
-                                account? (
-                                    <a href="https://nft.farm/accounts/me/collection" target="_blank">
-                                        <Avatar src={zeroaddress}></Avatar>
-                                    </a>
-                                ):(
-                                    <Link to="/account/me/collection">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3.4em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></svg> 
-                                    </Link>
-                                )
-                            }
-                    </Menu.Item>
-            </Menu>
+            {
+                parseInt(widthScreen) > 900 ? (
+                <> 
+                    <LargeScreen />
+                </>
+                ) : (
+                    <>
+                    <SmallScreen />
+                    </>
+                )
+            }
 		</DivStyled>
         );
 };
+
+const LargeScreen = () => {
+    const {account} = useContext(AuthContext)
+    return (
+        <Menu mode="horizontal" >
+            <Menu.Item key="item1">
+                <Link to="/markets">Market</Link>
+            </Menu.Item>
+            <Menu.Item key="item2">
+                <Link to="/ino">INO</Link>
+            </Menu.Item>
+            <Menu.Item key="item3">
+                <a href="https://voting.itam.games/#/" target="_blank"> Vote </a>
+            </Menu.Item>
+            <Menu.Item key="item4">
+                <a href="https://v1.nft.farm/en" target="_blank"> V1 (Old) </a>
+            </Menu.Item>
+            <Menu.Item key="item5">
+                <a href="https://www.notion.so/itamservices/How-to-use-ITAM-NFT-Farm-84de17c9fbb84e51bb4382dea8d93deb" target="_blank"> Help </a>
+            </Menu.Item>
+            <Menu.Item key="item6">
+                <a href="https://itamservices.notion.site/itamservices/ITAM-Middleware-Guide-0904a699cd2d4b17b33ff0b1598e3767" target="_blank"> Developer </a>
+            </Menu.Item>
+            <Menu.Item key="item7">
+                    {
+                        account? (
+                            <a href="https://nft.farm/accounts/me/collection" target="_blank">
+                                <Avatar src={zeroaddress}></Avatar>
+                            </a>
+                        ):(
+                            <Link to="/account/me/collection">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3.4em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></svg> 
+                            </Link>
+                        )
+                    }
+            </Menu.Item>
+        </Menu>
+    )
+
+}
+const SmallScreen = () => {
+    const {account} = useContext(AuthContext)
+    return (
+        <Menu mode="inline" >
+            <Menu.SubMenu key ="sub1">
+                <Menu.Item key="item1">
+                    <Link to="/markets">Market</Link>
+                </Menu.Item>
+                <Menu.Item key="item2">
+                    <Link to="/ino">INO</Link>
+                </Menu.Item>
+                <Menu.Item key="item3">
+                    <a href="https://voting.itam.games/#/" target="_blank"> Vote </a>
+                </Menu.Item>
+                <Menu.Item key="item4">
+                    <a href="https://v1.nft.farm/en" target="_blank"> V1 (Old) </a>
+                </Menu.Item>
+                <Menu.Item key="item5">
+                    <a href="https://www.notion.so/itamservices/How-to-use-ITAM-NFT-Farm-84de17c9fbb84e51bb4382dea8d93deb" target="_blank"> Help </a>
+                </Menu.Item>
+                <Menu.Item key="item6">
+                    <a href="https://itamservices.notion.site/itamservices/ITAM-Middleware-Guide-0904a699cd2d4b17b33ff0b1598e3767" target="_blank"> Developer </a>
+                </Menu.Item>
+                <Menu.Item key="item7">
+                        {
+                            account? (
+                                <a href="https://nft.farm/accounts/me/collection" target="_blank">
+                                    <Avatar src={zeroaddress}></Avatar>
+                                </a>
+                            ):(
+                                <Link to="/account/me/collection">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3.4em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></svg> 
+                                </Link>
+                            )
+                        }
+                </Menu.Item>
+            </Menu.SubMenu>
+        </Menu>
+    )
+    
+}
 export default HeaderComponent;

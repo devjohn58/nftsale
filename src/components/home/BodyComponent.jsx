@@ -62,10 +62,11 @@ const BodyComponent = () => {
         {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/2', image: 'https://assets.itam.games/lime-odyssey/ino-2nd-package.jpeg',itam: 'ITAM', price: 7000,  title: 'Lime Odyssey M 2nd INO Package'},
         {link: '/markets/0x2a62623bbb82ac60795d2015d70cc87861258def/1', image: 'https://assets.itam.games/lime-odyssey/ino-1st-package.jpeg',itam: 'ITAM', price: '10000',  title: 'Lime Odyssey M 1st INO Package'}
     ]
+    const widthScreen = window.innerWidth;
 	return (
 		<>
 			<RowStyled>
-				<Col span  = {4}>
+				<Col span  = {0} lg={{span: '6'}} xl={4}>
 					<div className="_right">
 						<div className="_right_1">
 							<div className="_right_1_1">
@@ -90,7 +91,7 @@ const BodyComponent = () => {
 						</div>
 					</div>
 				</Col>
-				<Col className="_left" span={20}>
+				<Col className="_left" span={24} lg={18} xl={20}>
 					<div className="_left_1">
 						<div>
                             <Typography.Text style={{ fontSize: "17px" }}>
@@ -113,17 +114,17 @@ const BodyComponent = () => {
 						</div>
 					</div>
                 <Col span = {24}>
-                    <Row>
+                    <Row justify={parseInt(widthScreen) < 700 ? "center" :  false}>
                         {
                             data.map(data => (
-                                <Col span={7}>
+                                <Col sm={12} md={7} lg={6}>
                                     <Link to={data.link}>
                                         <div className="_card">
-                                            <Card title={ <center><img src={data.image} width="150px" height="280px" /></center>}>
+                                            <Card title={ <center><img src={data.image} width="100" height="150" /></center>}>
                                                 <div className="_card_body">
                                                     <div className="_text">
                                                         <div>
-                                                            <Typography.Text type='secondary' style={{ fontWeight: '500'}}>Lime Odyssey M</Typography.Text>
+                                                            <Typography.Text type='secondary' style={{ fontWeight: '500', }}>Lime Odyssey M</Typography.Text>
                                                         </div>
                                                         <div>
                                                             <Typography.Text type='secondary' style={{fontWeight: '500'}}>Price</Typography.Text>
@@ -132,7 +133,7 @@ const BodyComponent = () => {
                                                     <div className="_tooltip">
                                                         <div>
                                                             <Tooltip title={data.title}>
-                                                                <Typography.Text style={{cursor: 'pointer'}} style={{fontSize: '19px', fontWeight: '400'}}>Lime Odyssey M ...</Typography.Text>
+                                                                <Typography.Text style={{cursor: 'pointer'}} style={{fontSize: '18px', fontWeight: '400',}}>Lime Odyssey M ...</Typography.Text>
                                                             </Tooltip>
                                                         </div>
                                                         <div>

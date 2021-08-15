@@ -4,7 +4,7 @@ import BodyComponent from '../components/home/BodyComponent';
 import styled from 'styled-components';
 
 const DivStyled = styled.div`
-    min-width: 1260px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     padding: 4.375rem 0px 0px;
